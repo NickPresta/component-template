@@ -1,8 +1,8 @@
 # Component Template
 
-Quick and dirty starter template for building ES6 and Sass.
+Quick and dirty starter template for building JavaScript and Sass.
 
-Build JavaScript (using Babel, Browserify) and Sass (using node-sass) for development or production.
+Build Javascript (ES6+ using Babel, Browserify) and Sass (using node-sass) for development or production.
 Currently `envify`, `minifyify` and `babelify` are run during Browserify step. Sourcemaps are turned off.
 
 1. `npm install`
