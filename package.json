@@ -1,0 +1,24 @@
+{
+  "name": "mypackage",
+  "version": "1.0.0",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "npm run distJS && npm run distSASS",
+    "distJS": "NODE_ENV=production browserify -e src/javascript/app.js -t envify -t babelify -d -p [minifyify --no-map] --outfile dist/app.js",
+    "distSASS": "node-sass -o dist src/style/style.scss style.css --output-style compressed",
+    "dev": "parallelshell 'npm run devJS' 'npm run devSASS'",
+    "devJS": "watchify -v -e src/javascript/app.js -t babelify --outfile dist/app.js",
+    "devSASS": "node-sass -o dist -w src/style/style.scss style.css --output-style compressed"
+  },
+  "devDependencies": {
+    "babel": "4.7.16",
+    "babelify": "5.0.4",
+    "browserify": "9.0.3",
+    "envify": "3.4.0",
+    "minifyify": "6.4.0",
+    "node-sass": "2.1.1",
+    "parallelshell": "1.1.1",
+    "watchify": "2.6.1"
+  }
+}
